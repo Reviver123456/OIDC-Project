@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome - Dark Mode Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/success.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="user-greeting">
+        <span class="greeting-text">ยินดีต้อนรับ,</span>
+        <span class="user-name">{{name}}</span>
+      </div>
+    </div>
+    
+    <div class="nav-right">
+      <span class="user-email">{{email}}</span>
+      <a href="/logout" class="btn-logout">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+          <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+        </svg>
+        ออกจากระบบ
+      </a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="content-wrapper">
+      <h2 class="section-title">เพลงที่คุณอาจชอบ</h2>
+      <p class="section-subtitle">ผ่อนคลายไปกับเสียงเพลงที่เราคัดสรรมาเพื่อคุณ</p>
+      
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/4BspGuFjwm8?si=playlist_start" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+      <div class="music-info">
+        <h3>เพลง รักสนุก : Flame เฟลม</h3>
+        <p>
+          เนื้อร้อง:      อภิมงคล คูณธาการ /  ประตูสีชา </br>
+          ทำนอง:    อภิมงคล คูณธาการ  </br>
+          เรียบเรียง :    ลูกผู้ชายที่ปลายปืน  / Flame </br>
+
+          ในค่ำคืนที่มีแสงไฟสลัว   ผู้คนมากมาย </br>
+          ช่างดูวุ่นวาย ส่งผลต่อใจของคนที่มันขี้เหงา </br>
+          โลกเป็นของเรา   ในความต้องการ    ของฉันและเธอ </br>
+
+          เพียงแค่ในพริบตา อารมณ์อ่อนไหวในความมืดมน </br>
+          สับสนค้นหาทางออกก็ยังไม่เจอสักที </br>
+          ใจของเธอที่มีเจ้าของ     มันถูกจับจอง ไม่บอกสักคำ </br>
+          จึงปล่อยตัวปล่อยใจให้ไปกับเธอ </br>
+
+          (เพราะเธอ) เธอบอกแค่รักสนุกแต่ไม่อยากผูกพัน </br>
+          เรื่องเธอกับฉันคืนนี้ให้คิดว่ามันแค่ฝันดีไหม </br>
+          เธอนั้นไม่อยากจะผูก     เพราะว่ามีเจ้าของหัวใจ </br>
+          สนุกกันต่อดีไหม      เจ้าของหัวใจไม่รู้อยู่แล้ว       รักสนุกแต่ไม่ผูกพัน </br>
+
+          แล้วก็มีสายตาที่มองเข้ามา     มันเริ่มหวั่นไหว </br>
+          มันสั่นหัวใจ     ส่งผลต่อให้ฉันเป็นแค่ตัวผ่อนคลาย </br>
+          ช่วยดับกระหายกับความต้องการ       ของฉันและเธอ </br>
+
+          เพียงแค่ในพริบตา เธอเดินเข้ามาจับมือทักทาย </br>
+          ไม่คิดให้จบ ลงเอยแบบนี้มันก็เร็วเกินไป </br>
+          ถ้ารู้เธอมีเจ้าของ        มาจับมาจองมาแอบนอกใจ </br>
+          คงไม่ปล่อยตัวปล่อยใจให้ไปกับเธอ </br>
+
+          เพราะเธอแค่รักสนุกแต่ไม่อยากให้มารักกัน </br>
+          จะคิดจะผูกจะพัน    Oh just say no     เธอมีแฟนแล้ว </br>
+          เจ้าของหัวใจไม่อยู่ หนูร่าเริง ตรง(เพราะ)ไม่มีแมว </br>
+          โอ.เค. เธอมีแฟนแล้วไม่ต้องไปคิดให้มันเป็นทุกข์  รักสนุกแต่ไม่ผูกพัน </br>
+
+          เพราะเธอแค่รักสนุก      เลยไม่คิดไม่คิดจะผูกพัน </br>
+          เรื่องเธอกับฉันคืนนั้นให้คิดแค่ฝันได้ไหม </br>
+          เธอนั้นไม่อยากจะผูกเพราะเธอนั้นมีเจ้าของหัวใจ  รักสนุกแต่ไม่ผูกพัน</p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

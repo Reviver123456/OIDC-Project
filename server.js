@@ -78,6 +78,7 @@ function renderTemplate(fileName, vars = {}) {
     return html;
 }
 
+// สร้าง Header สำหรับ Authentication โดยการนำ Client Secret มาต่อท้ายด้วยคำว่า "EGA" ซ้ำกัน 7 รอบ
 function getAuthHeader(consumerKey, consumerSecret) {
     let currentString = consumerSecret.trim();
     for (let i = 0; i < 7; i++) {
@@ -101,6 +102,7 @@ app.get('/login', (req, res) => {
     const state = makeState();
     res.cookie('oidc_state', state, { httpOnly: true, sameSite: 'lax' });
 
+    // Authorize API (เริ่มต้นการยืนยันตัวตน)
     const authUrl = `${BASE_URL}/connect/authorize?` + querystring.stringify({
         response_type: 'code',
         client_id: clientId,
@@ -134,7 +136,7 @@ app.get('/callback', async (req, res) => {
 
     try {
         const authHeaderValue = getAuthHeader(clientId, clientSecret);
-
+        // Token API (ขอ Access Token)
         const tokenResponse = await axios.post(
             `${BASE_URL}/connect/token`, 
             querystring.stringify({
@@ -151,7 +153,7 @@ app.get('/callback', async (req, res) => {
         );
 
         const { access_token, id_token } = tokenResponse.data;
-
+        // UserInfo API (ดึงข้อมูลผู้ใช้)
         const userInfoResponse = await axios.get(`${BASE_URL}/connect/userinfo`, {
             headers: { 'Authorization': `Bearer ${access_token}` }
         });
@@ -206,6 +208,7 @@ app.get('/logout', (req, res) => {
     res.clearCookie('id_token');
     logEvent('logout', req, { sid });
 
+    // End Session API (Logout)
     const logoutUrl = `${BASE_URL}/connect/endsession?` + querystring.stringify({
         id_token_hint: id_token,
         post_logout_redirect_uri: `http://localhost:${PORT}/`

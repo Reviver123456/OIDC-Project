@@ -78,7 +78,7 @@ function renderTemplate(fileName, vars = {}) {
     return html;
 }
 
-// สร้าง Header สำหรับ Authentication โดยการนำ Client Secret มาต่อท้ายด้วยคำว่า "EGA" ซ้ำกัน 7 รอบ
+// สร้าง Header สำหรับ Authentication โดยการนำ Client Secret มาต่อท้ายด้วยคำว่า "EGA" ซ้ำกัน 7 รอบ แล้วแปลงเป็น Base64
 function getAuthHeader(consumerKey, consumerSecret) {
     let currentString = consumerSecret.trim();
     for (let i = 0; i < 7; i++) {
